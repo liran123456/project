@@ -1,0 +1,192 @@
+
+/* עיצוב כללי */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url('p/opi1.webp'); /* הוסף את הנתיב של התמונה */
+    background-size: cover; /* משנה את גודל התמונה כך שתכסה את כל המסך */
+    background-repeat: no-repeat; /* מונע חזרה של התמונה */
+    background-position: center; /* ממרכז את התמונה */
+  }
+  
+  
+  header, footer {
+    background-color: #000;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+  
+  footer {
+    margin-top: 20px;
+  }
+  
+  /* עיצוב ראשי לתפריט */
+  .navbar {
+    background-color: #000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+  }
+  
+  .navbar .logo a {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  
+  .nav-links {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+  }
+  
+  .nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links li a:hover {
+    color: #00bcd4;
+    border-bottom: 2px solid #00bcd4;
+  }
+  
+  /* עיצוב לספירת מוצרים בעגלה - רק מספר */
+  #cart-count {
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 5px;
+    display: inline-block;
+  }
+  
+  /* תפריט המבורגר */
+  .hamburger {
+    font-size: 30px;
+    cursor: pointer;
+    display: none;
+  }
+  
+  /* רספונסיבי */
+  @media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background-color: #000;
+        width: 100%;
+        text-align: center;
+    }
+  
+    .nav-links.active {
+        display: flex;
+    }
+  
+    .hamburger {
+        display: block;
+    }
+  }
+  
+  /* רשת מוצרים */
+  .products {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ccc;
+    padding: 20px;
+    text-align: center;
+    background-color: rgba(249, 249, 249, 0.8); /* צבע לבן עם שקיפות */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  
+  .product img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .product h3 {
+    font-size: 22px;
+    margin: 10px 0;
+  }
+  
+  .product p {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .price {
+    font-size: 20px;
+    color: red;
+    margin: 10px 0;
+  }
+  
+  button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #45a049;
+  }
+  
+  .product:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* כפתור לחיצה */
+  button:active {
+    transform: scale(0.95);
+    background-color: #388E3C;
+  }
+  
+  .product img {
+      transition: transform 0.3s ease;
+  }
+  
+  .product img:hover {
+      transform: scale(1.05);
+  }
+  
+  /* עיצוב לסינון מוצרים */
+  .filters {
+      margin: 20px 0;
+      display: flex;
+      justify-content: space-between;
+  }
+  
+  .filters label {
+      margin-right: 10px;
+  }
+  
+  .filters input,
+  .filters select {
+      padding: 5px;
+      font-size: 16px;
+  }
+  

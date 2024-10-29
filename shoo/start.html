@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ברוכים הבאים לחנות הגיימינג שלך</title>
+    <link rel="stylesheet" href="style_start1.css">
+    <link rel="stylesheet" href="style_intro.css">
+    <link rel="stylesheet" href="style_chatbot.css">
+    <script src="script_chatbot.js" defer></script>
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="cart.html">
+                <span>&#128722;</span>
+                <span id="cart-count">0</span>
+            </a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="#about">אודותינו</a></li>
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="cold.html">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+            <li><a href="contact.html">צור קשר</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">&#9776;</div>
+    </nav>
+</header>
+
+<section class="welcome-section">
+    <div class="welcome-overlay"></div>
+    <div class="welcome-content">
+        <h1 class="fade-in">החוויה שלך מתחילה כאן</h1>
+        <p class="fade-in">בוא למצוא את הציוד שישדרג את הדרך שלך לנצח, לכל קרב ולכל משחק.</p>
+        <a href="gaming.html" class="explore-button fade-in">גלה את עולמנו</a>
+    </div>
+</section>
+
+<section id="about" class="about-section">
+    <h2>אודותינו</h2>
+    <p>ברוכים הבאים לחנות המובילה לציוד גיימינג בישראל. אנחנו כאן כדי להביא לך את הציוד המתקדם והאיכותי ביותר, ולהבטיח לך חווית משחק מדהימה עם מוצרים שעומדים בסטנדרטים הגבוהים ביותר. הצטרף אל קהילת הגיימרים המתרחבת שלנו והתחל את המסע שלך איתנו.</p>
+</section>
+
+<section class="reviews-section">
+    <h2>ביקורות לקוחות</h2>
+    <div class="review">
+        <p>״המוצרים שקניתי מחנות הגיימינג פשוט מדהימים! השירות היה מהיר וידידותי, ללא ספק אמליץ לכל החברים שלי.״</p>
+        <span>- יובל ר.</span>
+    </div>
+    <div class="review">
+        <p>״ציוד ברמה הגבוהה ביותר, מחירים מעולים ושירות שאין עליו! החנות הכי טובה לציוד גיימינג בארץ.״</p>
+        <span>- מיכאל ט.</span>
+    </div>
+
+    <!-- טופס הוספת ביקורת -->
+    <div class="add-review">
+        <h3>שתף את דעתך</h3>
+        <textarea id="review-text" placeholder="כתוב כאן את חוות דעתך..."></textarea>
+        <button onclick="addReview()">שלח ביקורת</button>
+    </div>
+</section>
+
+<!-- Toast Notification -->
+<div id="toast" class="toast hidden">תודה על חוות דעתך!</div>
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<script>
+    function toggleMenu() {
+        const menu = document.getElementById('menu');
+        menu.classList.toggle('active');
+    }
+
+    function addReview() {
+        const reviewText = document.getElementById('review-text').value;
+        if (reviewText) {
+            const reviewsSection = document.querySelector('.reviews-section');
+            const newReview = document.createElement('div');
+            newReview.className = 'review';
+            newReview.innerHTML = `<p>${reviewText}</p><span>- משתמש אנונימי</span>`;
+            reviewsSection.insertBefore(newReview, reviewsSection.querySelector('.add-review'));
+            document.getElementById('review-text').value = '';
+
+            // הצגת הודעת Toast
+            const toast = document.getElementById('toast');
+            toast.classList.add('show');
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, 3000);
+        }
+    }
+</script>
+
+<!-- אייקון לפתיחת הצ'אטבוט -->
+<div id="chatbot-icon" onclick="toggleChatbot()">💬</div>
+
+<!-- קונטיינר לצ'אטבוט -->
+<div id="chatbot" class="hidden">
+    <div id="chatbot-header">
+        עוזר וירטואלי
+        <button onclick="toggleChatbot()">X</button> <!-- כפתור לסגירת הצ'אט -->
+    </div>
+    <div id="chatbot-messages"></div>
+    <input type="text" id="user-input" placeholder="היי אני פה לתמיכה" onkeypress="handleKeyPress(event)">
+    <button onclick="sendMessage()">שלח</button>
+</div>
+
+</body>
+</html>

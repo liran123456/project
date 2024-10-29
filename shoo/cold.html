@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מערכות קירור</title>
+    <link rel="stylesheet" href="style_cold.css"> <!-- Corrected path to CSS -->
+    <script src="script_cold.js"></script> <!-- Corrected path to JavaScript -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="cart.html">
+                <span>&#128722;</span> <!-- אייקון של עגלה -->
+                <span id="cart-count">0</span> </a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="#">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+</header>
+
+<section class="products">
+    <div class="product-grid">
+        <div class="product">
+            <img src="p/cold1.webp" alt="(FrostStorm)">
+            <h3>(FrostStorm)</h3>
+            <p>סערת קור הוא פתרון קירור פשוט אך יעיל לגיימרים, מתאים לכל מי שרוצה קירור שקט ומעוצב בלי השקעה גבוהה</p>
+            <span class="price">₪250</span>
+            <button onclick="addToCart('FrostStorm', 250, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/cold2.webp" alt="ThunderCool">
+            <h3>ThunderCool</h3>
+            <p>פתרון קירור עוצמתי לגיימרים, עם עיצוב ברק, תאורת סוערת ופעולה שקטה שמבטיחה קירור יעיל במשחקים אינטנסיביים</p>
+            <span class="price">₪250</span>
+            <button onclick="addToCart('ThunderCool', 250, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/cold3.webp" alt="Liran IceBlade">
+            <h3>Liran IceBlade</h3>
+            <p>מאוורר קירור עוצמתי לגיימרים בעיצוב חד ומינימליסטי עם מיתוג ותאורה יחודית וקרירה לגימור מושלם</p>
+            <span class="price">₪300</span>
+            <button onclick="addToCart('Liran IceBlade', 300, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/cold4.webp" alt="Liran FrostFlow">
+            <h3>Liran FrostFlow</h3>
+            <p>מאוורר קירור עוצמתי לגיימרים, עם לוגו בולט תאורה מרהיבה ותצוגת טמפרטורה מדויקת לשמירה על ביצועים מיטביים
+            </p>
+            <span class="price">₪350</span>
+            <button onclick="addToCart('Liran FrostFlow', 350, this.closest('.product'))">הוסף לסל</button>
+        </div>
+    </div>
+</section>
+
+<!--הודעה התווסף לסל 
+<div id="success-message" style="display:none; background-color: #4CAF50; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%;">
+    התווסף בהצלחה לסל הקניות!
+</div>
+-->
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<script>
+    function showSuccessMessage() {
+        var message = document.getElementById('success-message');
+        message.style.display = 'block';
+        setTimeout(function() {
+            message.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

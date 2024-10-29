@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>עגלת קניות</title>
+    <link rel="stylesheet" href="cart_style.css"> <!-- קישור לקובץ ה-CSS -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="start.html">חזרה לחנות</a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="#">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+</header>
+
+<section class="cart">
+    <h1>עגלת קניות</h1>
+    <div class="cart-items" id="cart-items">
+        <!-- מוצרים יופיעו כאן -->
+    </div>
+    <p id="empty-cart" style="display: none;">העגלה ריקה</p>
+    <p id="total-price">סה"כ: ₪0</p>
+    <button id="pay-button" onclick="handlePayment()">בצע תשלום</button>
+</section>
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<!-- קישור לקובץ ה-JavaScript -->
+<script src="cart_script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        loadCart();
+    });
+
+    function handlePayment() {
+        alert('תהליך התשלום עוד לא זמין.');
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ציוד גיימינג</title>
+    <link rel="stylesheet" href="style_gaming.css"> <!-- Corrected path to CSS -->
+    <script src="script_gaming.js"></script> <!-- Corrected path to JavaScript -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="cart.html">
+                <span>&#128722;</span> <!-- אייקון של עגלה -->
+                <span id="cart-count">0</span> </a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="cold.html">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+</header>
+
+<section class="products">
+    <div class="product-grid">
+        <div class="product">
+            <img src="p/gaming1.webp" alt="Liran headphones">
+            <h3>Liran headphones</h3>
+            <p>אוזניות גיימינג אוזניות עוצמתיות ונוחות עם תאורה עוצמתית ולוגו בולט, מספקות חוויית סאונד סוחפת לגיימרים מקצועיים</p>
+            <span class="price">₪450</span>
+            <button onclick="addToCart('Liran headphones', 450, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/keyboard1.webp" alt="מקלדת גיימינג Liran">
+            <h3>Liran Keyboard Gaming</h3>
+            <p>מקלדת מכנית קומפקטית עם תאורת ומותאמת אישית עם לוגו יוקרתי, אידיאלית למשחקים</p>
+            <span class="price">₪350</span>
+            <button onclick="addToCart('מקלדת גיימינג Liran', 350, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/mouse.webp" alt="Liran EdgeMouse">
+            <h3>Liran EdgeMouse</h3>
+            <p>עכבר גיימינג עם עיצוב מתקדם, תאורה מושלמת ולוגו בולט, המספק אחיזה נוחה ודיוק מרבי לחוויית משחק מושלמת</p>
+            <span class="price">₪300</span>
+            <button onclick="addToCart('Liran EdgeMouse', 300, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/ped.webp" alt="Liran ProPad">
+            <h3>Liran ProPad</h3>
+            <p>פד גיימינג ארוך ומואר, המיועד לעכבר ומקלדת, עם תאורת עדינה ולוגו בולט לעיצוב מושלם ומקצועי</p>
+            <span class="price">₪100</span>
+            <button onclick="addToCart('Liran ProPad', 100, this.closest('.product'))">הוסף לסל</button>
+        </div>
+    </div>
+</section>
+
+<!--הודעה התווסף לסל 
+<div id="success-message" style="display:none; background-color: #4CAF50; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%;">
+    התווסף בהצלחה לסל הקניות!
+</div>
+-->
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<script>
+    function showSuccessMessage() {
+        var message = document.getElementById('success-message');
+        message.style.display = 'block';
+        setTimeout(function() {
+            message.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

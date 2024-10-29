@@ -1,0 +1,110 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ראם למחשב</title>
+    <link rel="stylesheet" href="style_ram.css"> <!-- Corrected path to CSS -->
+    <script src="script_ram.js"></script> <!-- Corrected path to JavaScript -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="cart.html">
+                <span>&#128722;</span> <!-- אייקון של עגלה -->
+                <span id="cart-count">0</span> </a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="cold.html">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+</header>
+
+<section class="products">
+    <div class="product-grid">
+        <!-- מוצר 1 -->
+        <div class="product">
+            <img src="ram/ram1.jpg" alt="Corsair Vengeance">
+            <h3>Corsair Vengeance</h3>
+            <p>זיכרון למחשב Corsair Vengeance 2x48GB DDR5 7000MHz CL40 - צבע שחור</p>
+            <span class="price">₪100</span>
+            <button onclick="addToCart('Corsair Vengeance', 100, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <!-- מוצר 2 -->
+        <div class="product">
+            <img src="ram/ram2.jpg" alt="G.Skill Trident Z RGB">
+            <h3>G.Skill Trident Z RGB</h3>
+            <p>זיכרון למחשב G.Skill Trident Z RGB 2x16GB DDR4 3200Mhz CL16 Kit</p>
+            <span class="price">₪419</span>
+            <button onclick="addToCart('G.Skill Trident Z RGB', 419, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <!-- מוצר 3 -->
+        <div class="product">
+            <img src="ram/ram3.jpg" alt="Adata XPG LANCER RGB">
+            <h3>Adata XPG LANCER RGB</h3>
+            <p>כרטיס זיכרון פנימי למחשב נייח Adata XPG LANCER RGB CL30 32GB DDR5 5600MHz U-DIMM - צבע שחור</p>
+            <span class="price">₪589</span>
+            <button onclick="addToCart('Adata XPG LANCER RGB', 589, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <!-- מוצר 4 -->
+        <div class="product">
+            <img src="ram/ram4.jpg" alt="Kingston FURY BEAST RGB">
+            <h3>Kingston FURY BEAST RGB</h3>
+            <p>זכרון למחשב Kingston FURY BEAST RGB 32GB DDR5 6400MHz CL32 - צבע לבן</p>
+            <span class="price">₪695</span>
+            <button onclick="addToCart('Kingston FURY BEAST RGB', 695, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <!-- מוצר 5 -->
+        <div class="product">
+            <img src="ram/ram5.jpg" alt="G.Skill Trident Z5 RGB">
+            <h3>G.Skill Trident Z5 RGB</h3>
+            <p>זיכרון למחשב G.Skill Trident Z5 RGB 2x16GB DDR5 6400MHz CL30 - שחור</p>
+            <span class="price">₪685</span>
+            <button onclick="addToCart('G.Skill Trident Z5 RGB', 685, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <!-- מוצר 6 -->
+        <div class="product">
+            <img src="ram/ram6.jpg" alt="Adata XPG GAMMIX">
+            <h3>Adata XPG GAMMIX</h3>
+            <p>כרטיס זיכרון פנימי למחשב נייח Adata XPG GAMMIX D20 CL18 16GB DDR4 3600MHz U-DIMM - צבע שחור</p>
+            <span class="price">₪209</span>
+            <button onclick="addToCart('Adata XPG GAMMIX', 209, this.closest('.product'))">הוסף לסל</button>
+        </div>
+    </div>
+</section>
+
+<!--הודעה התווסף לסל 
+<div id="success-message" style="display:none; background-color: #4CAF50; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%;">
+    התווסף בהצלחה לסל הקניות!
+</div>
+-->
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<script>
+    function showSuccessMessage() {
+        var message = document.getElementById('success-message');
+        message.style.display = 'block';
+        setTimeout(function() {
+            message.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>

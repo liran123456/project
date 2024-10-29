@@ -1,0 +1,223 @@
+/* עיצוב מתקדם לדף פתיחה */
+.welcome-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 100vh;
+    background: url('p/background.webp') center/cover no-repeat;
+    overflow: hidden;
+    color: white;
+  }
+  
+  .welcome-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 0.8), rgba(50, 50, 50, 0.6));
+    opacity: 0.85;
+    z-index: 0; /* ודא שערך ה-z-index כאן נמוך מ-1000 */
+}
+
+
+  
+  .welcome-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    animation: fadeIn 1.5s ease-out both;
+  }
+  
+  .welcome-content h1 {
+    font-size: 55px;
+    font-weight: bold;
+    margin: 0 0 10px;
+    line-height: 1.2;
+    opacity: 0;
+    animation: fadeInText 1s ease forwards;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+  }
+  
+  .welcome-content p {
+    font-size: 24px;
+    margin-bottom: 30px;
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .explore-button {
+    background: linear-gradient(90deg, #e63946, #ff6b6b);
+    color: white;
+    padding: 15px 30px;
+    font-size: 18px;
+    text-decoration: none;
+    border-radius: 50px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    opacity: 0;
+    animation: fadeInText 2s ease forwards;
+    box-shadow: 0px 4px 15px rgba(230, 57, 70, 0.5);
+  }
+  
+  .explore-button:hover {
+    background-color: #ff4f5a;
+    transform: scale(1.05);
+    box-shadow: 0px 6px 20px rgba(230, 57, 70, 0.8);
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(10px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* עיצוב למדור "אודותינו" */
+  .about-section {
+    padding: 50px;
+    background-color: #2c2c2c;
+    color: white; /* צבע טקסט לבן בשביל ניגודיות */
+    text-align: center;
+    position: relative;
+  }
+  
+  .about-section h2 {
+    font-size: 36px;
+    color: #f4ecec;
+    margin-bottom: 20px;
+    position: relative;
+    animation: fadeInTitle 1s ease forwards;
+  }
+  
+  .about-section p {
+    font-size: 18px;
+    max-width: 800px;
+    margin: auto;
+    color: rgb(218, 233, 218);
+    line-height: 1.6;
+    opacity: 0;
+    animation: fadeInText 1.5s ease forwards;
+  }
+  
+  /* מדור ביקורות */
+  .reviews-section {
+    padding: 50px;
+    background: url('p/start.webp') center/cover no-repeat; /* החלף בנתיב לתמונה שלך */
+    text-align: center;
+    color: white; /* צבע טקסט בהיר לניגודיות */
+    position: relative;
+}
+
+  .reviews-section h2 {
+    font-size: 32px;
+    color: rgb(45, 43, 43);
+    margin-bottom: 20px;
+  }
+  
+  .review {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgb(114, 107, 107);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    animation: slideIn 1s ease forwards;
+    opacity: 0;
+  }
+  
+  .review:nth-child(even) {
+    animation-delay: 0.2s;
+  }
+  
+  .review:nth-child(odd) {
+    animation-delay: 0.4s;
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* עיצוב טופס ביקורת */
+  .add-review {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .add-review h3 {
+    font-size: 28px;
+    color: #e70808; /* צבע מושך תשומת לב */
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3); /* צל טקסט */
+    font-weight: bold;
+    animation: fadeInTitle 1s ease forwards;
+}
+
+
+  #review-text {
+    width: 100%;
+    max-width: 600px;
+    padding: 15px;
+    font-size: 16px;
+    margin: 10px 0;
+    border: 1px solid rgb(114, 107, 107);
+    border-radius: 5px;
+    resize: vertical;
+  }
+  
+  .add-review button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .add-review button:hover {
+    background: linear-gradient(90deg, #0072ff, #00c6ff);
+  }
+  
+  /* אנימציות לכותרות ותכנים */
+  @keyframes fadeInTitle {
+    0% { opacity: 0; transform: translateY(-20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes fadeInText {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
+/*פה זה ההודעה שתשלח כאשר מישהו מגיב בביקורת*/
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #333;
+    color: white;
+    padding: 15px;
+    border-radius: 5px;
+    z-index: 1000;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.toast.show {
+    opacity: 1;
+}

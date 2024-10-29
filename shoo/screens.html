@@ -1,0 +1,90 @@
+
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ציוד גיימינג</title>
+    <link rel="stylesheet" href="style_screens.css"> <!-- Corrected path to CSS -->
+    <script src="script_screens.js"></script> <!-- Corrected path to JavaScript -->
+</head>
+<body>
+
+<header>
+    <nav class="navbar">
+        <div class="logo">
+            <a href="cart.html">
+                <span>&#128722;</span> <!-- אייקון של עגלה -->
+                <span id="cart-count">0</span> </a>
+        </div>
+        <ul class="nav-links" id="menu">
+            <li><a href="gaming.html">ציוד לגיימינג</a></li>
+            <li><a href="screens.html">מסכים</a></li>
+            <li><a href="case_pc.html">מארזים</a></li>
+            <li><a href="#">לוחות אם</a></li>
+            <li><a href="ram.html">זיכרונות ראם</a></li>
+            <li><a href="#">מעבדים</a></li>
+            <li><a href="cold.html">מערכות קירור</a></li>
+            <li><a href="sale.html">סייל</a></li>
+        </ul>
+        <div class="hamburger" onclick="toggleMenu()">
+            &#9776;
+        </div>
+    </nav>
+</header>
+
+<section class="products">
+    <div class="product-grid">
+        <div class="product">
+            <img src="p/screen1.webp" alt="Samsung Odyssey G9">
+            <h3>Samsung Odyssey G9 (49 אינץ')</h3>
+            <p>Samsung Odyssey G9 (49 אינץ') מסך רחב ומעוקל עם רזולוציה גבוהה וחוויית משחק סוחפת.</p>
+            <span class="price">₪5,500</span>
+            <button onclick="addToCart('Samsung Odyssey G9 (49 אינץ)', 5500, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/screen2.webp" alt="ASUS ROG Swift PG279Q (27 אינץ)">
+            <h3>ASUS ROG Swift PG279Q (27 אינץ')</h3>
+            <p>ASUS ROG Swift PG279Q (27 אינץ') מסך עם פאנל IPS וביצועים מעולים לגיימינג.</p>
+            <span class="price">₪2,300</span>
+            <button onclick="addToCart('ASUS ROG Swift PG279Q', 2300, this.closest('.product'))">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/screen3.webp" alt="Dell S2421HGF (24 אינץ')">
+            <h3>Dell S2421HGF (24 אינץ')</h3>
+            <p>Dell S2421HGF (24 אינץ')  מסך קומפקטי עם איכות Full HD, אידיאלי למי שזקוק למסך קטן אך איכותי.</p>
+            <span class="price">₪3,100</span>
+            <button onclick="addToCart('Dell S2421HGF (24 אינץ'), 3100, this.closest('.product')">הוסף לסל</button>
+        </div>
+        <div class="product">
+            <img src="p/screen4.webp" alt="HP Infinity GX27 39">
+            <h3>HP Infinity GX27</h3>
+            <p>HP Infinity GX27 מסך עוצמתי מבית hp 39 אינ'צ</p>
+            <span class="price">₪2,500</span>
+            <button onclick="addToCart('HP Infinity GX27', 2500, this.closest('.product'))">הוסף לסל</button>
+        </div>
+    </div>
+</section>
+
+<!--הודעה התווסף לסל 
+<div id="success-message" style="display:none; background-color: #4CAF50; color: white; text-align: center; padding: 10px; position: fixed; top: 0; width: 100%;">
+    התווסף בהצלחה לסל הקניות!
+</div>
+-->
+
+<footer>
+    <p>כל הזכויות שמורות &copy; 2024</p>
+</footer>
+
+<script>
+    function showSuccessMessage() {
+        var message = document.getElementById('success-message');
+        message.style.display = 'block';
+        setTimeout(function() {
+            message.style.display = 'none';
+        }, 3000);
+    }
+</script>
+
+</body>
+</html>
